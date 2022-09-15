@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "sllSBCwA3mFIlNaEbJ/qUOpBwwOXQ6VbL+LTmKQIakU=",
+  "Source": "apiEmail",
+  "BasePath": "_content/apiEmail",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
