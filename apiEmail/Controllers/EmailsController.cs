@@ -34,12 +34,10 @@ namespace apiEmail.Controllers
         public async Task<string> Post([FromBody] Email email_body)
         {
             SmtpService smtpserv = new SmtpService(config);
-            Task<string> result = smtpserv.SendEmailAsync(email_body.recipient, email_body.carbon_copy_recipients, email_body.subject, email_body.text); //отправка сообщения электронной почты
-            result.Wait();
-            DbEmail dbEmail = new DbEmail(email_body, result.Result);
-            db.DbEmails.Add(dbEmail);
-            await db.SaveChangesAsync();
-            return result.Result;
+            string result = smtpserv.SendEmail(email_body.recipient, email_body.carbon_copy_recipients, email_body.subject, email_body.text); //отправка сообщения электронной почты
+            DbService dbserv = new DbService(db);
+            dbserv.DbInsertMail(email_body, result);
+            return result;
         }
 
     }

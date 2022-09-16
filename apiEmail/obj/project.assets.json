@@ -2389,11 +2389,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Alex\\source\\repos\\apiEmail\\apiEmail\\apiEmail.csproj",
+      "projectUniqueName": "C:\\Users\\Alex\\Documents\\GitHub\\TestOzon\\apiEmail\\apiEmail.csproj",
       "projectName": "apiEmail",
-      "projectPath": "C:\\Users\\Alex\\source\\repos\\apiEmail\\apiEmail\\apiEmail.csproj",
+      "projectPath": "C:\\Users\\Alex\\Documents\\GitHub\\TestOzon\\apiEmail\\apiEmail.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Alex\\source\\repos\\apiEmail\\apiEmail\\obj\\",
+      "outputPath": "C:\\Users\\Alex\\Documents\\GitHub\\TestOzon\\apiEmail\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

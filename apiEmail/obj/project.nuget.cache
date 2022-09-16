@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "UZD0UUN/ZSTD2sAHx6hjoG4BMo9N5vKnMbz9N+vOkYikcjZ1UZoT1iiNo8H1zdZA0vWrY3V8KPZR8j/NH+exsA==",
+  "dgSpecHash": "H0+Bi0J85ImBl1GQgbnLd+ml1bEqcA+lms1etIq5oOo9g/BVUKIzSDcQtbCcuEkX6O2hfNkiHtU85SmOnUMr1A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Alex\\source\\repos\\apiEmail\\apiEmail\\apiEmail.csproj",
+  "projectFilePath": "C:\\Users\\Alex\\Documents\\GitHub\\TestOzon\\apiEmail\\apiEmail.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alex\\.nuget\\packages\\mailkit\\3.2.0\\mailkit.3.2.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

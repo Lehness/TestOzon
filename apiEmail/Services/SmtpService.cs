@@ -18,7 +18,7 @@ namespace apiEmail.Services
         {
             this.config = config;
         }
-        public async Task<string> SendEmailAsync(string email, List<string> copies, string subject, string message)
+        public string SendEmail(string email, List<string> copies, string subject, string message)
         {
 
             var emailMessage = new MimeMessage();
@@ -38,10 +38,10 @@ namespace apiEmail.Services
 
             using (var client = new SmtpClient())
             {
-                await client.ConnectAsync(config.Value.SmtpServer, config.Value.SmtpPort, false);
-                await client.AuthenticateAsync(config.Value.SmtpLogin, config.Value.SmtpPass);
-                string res = await client.SendAsync(emailMessage);
-                await client.DisconnectAsync(true);
+                client.Connect(config.Value.SmtpServer, config.Value.SmtpPort, false);
+                client.Authenticate(config.Value.SmtpLogin, config.Value.SmtpPass);
+                string res = client.Send(emailMessage);
+                client.Disconnect(true);
                 return res;
             }
         }
