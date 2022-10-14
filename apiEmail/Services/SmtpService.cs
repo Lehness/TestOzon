@@ -23,7 +23,7 @@ namespace apiEmail.Services
 
             var emailMessage = new MimeMessage();
 
-            emailMessage.From.Add(new MailboxAddress("TestOzon", config.Value.Address));
+            emailMessage.From.Add(new MailboxAddress("MPEI PIRS", config.Value.Address));
             emailMessage.To.Add(new MailboxAddress("", email));
             if (copies.Count != 0)
             {

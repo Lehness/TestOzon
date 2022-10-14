@@ -7,6 +7,7 @@ using apiEmail.Models;
 using apiEmail.Services;
 using Microsoft.Extensions.Options;
 using System.Text.Json;
+using System.ComponentModel.DataAnnotations;
 
 namespace apiEmail.Controllers
 {
@@ -15,29 +16,30 @@ namespace apiEmail.Controllers
     public class EmailsController : ControllerBase
     {
 
-        private readonly IOptions<SettingsModel> config;
+        private readonly IOptions<SettingsModel> _config;
 
-        private ApContext db;
+        private ApContext _db;
         public EmailsController(ApContext context, IOptions<SettingsModel> config)
         {
-            this.config = config;
-            db = context;
+            this._config = config;
+            _db = context;
         }
         [HttpGet]
         public ActionResult<string> Get()
         {
-            return JsonSerializer.Serialize(db.DbEmails.ToList());//серелиализация списка объектов базы данных
+            return JsonSerializer.Serialize(_db.DbEmails.ToList());//серелиализация списка объектов базы данных
         }
 
 
         [HttpPost]
-        public async Task<string> Post([FromBody] Email email_body)
+        public string Post([FromBody] Email email_body)
         {
-            SmtpService smtpserv = new SmtpService(config);
-            string result = smtpserv.SendEmail(email_body.recipient, email_body.carbon_copy_recipients, email_body.subject, email_body.text); //отправка сообщения электронной почты
-            DbService dbserv = new DbService(db);
-            dbserv.DbInsertMail(email_body, result);
-            return result;
+            
+                SmtpService smtpserv = new SmtpService(_config);
+                string result = smtpserv.SendEmail(email_body.Recipient, email_body.Carbon_copy_recipients, email_body.Subject, email_body.Text); //отправка сообщения электронной почты
+                DbService dbserv = new DbService(_db);
+                dbserv.DbInsertMail(email_body, result);
+                return result;
         }
 
     }
